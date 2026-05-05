@@ -10,6 +10,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import quant.ecommerce.entity.auth.User;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Getter
@@ -29,12 +30,12 @@ public abstract class BaseEntity {
     private User updatedBy;
 
     @Column
-    private LocalDateTime deletedAt;
+    private Instant deletedAt;
 
     @CreationTimestamp
     @Column(updatable = false)
-    private LocalDateTime createdAt;
+    private Instant createdAt;
 
     @UpdateTimestamp
-    private LocalDateTime updatedAt;
+    private Instant updatedAt;
 }

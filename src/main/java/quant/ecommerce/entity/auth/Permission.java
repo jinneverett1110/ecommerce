@@ -9,8 +9,11 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-import org.springframework.http.HttpMethod;
 import quant.ecommerce.entity.common.BaseEntity;
+import quant.ecommerce.enums.HttpMethod;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "permissions", indexes = {
@@ -34,13 +37,16 @@ public class Permission extends BaseEntity {
     private String name;
 
     @Column(columnDefinition = "TEXT")
-    private String description="";
+    private String description;
 
     @Column(nullable = false, length = 255)
     @NotBlank
-    private String path; // vd: "/api/products"
+    private String path;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
-    @NotBlank
-    private HttpMethod method; // vd: "GET", "POST", "PUT", "DELETE"
+    private HttpMethod method;
+
+    @ManyToMany(mappedBy = "permissions")
+    private List<Role> roles = new ArrayList<>();
 }

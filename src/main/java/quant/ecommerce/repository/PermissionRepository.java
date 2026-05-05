@@ -1,25 +1,29 @@
 package quant.ecommerce.repository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import quant.ecommerce.entity.auth.Permission;
+import quant.ecommerce.enums.HttpMethod;
 
 import java.util.Set;
 
 public interface PermissionRepository extends JpaRepository<Permission, Integer> {
+    boolean exitsByPathAndMethod(String path, HttpMethod method);
+    boolean existsByPathAndMethodAndIdNot(String path, HttpMethod method, Integer id);
 
-//    @Query("""
-//    SELECT COUNT(p) > 0 FROM Permission p
-//    JOIN p.roles r
-//    WHERE p.path = :path
-//    AND p.method = :method
-//    AND r.name IN :roles
-//""")
-//    boolean existsByPathAndMethodAndRoles(
-//            @Param("path") String path,
-//            @Param("method") String method,
-//            @Param("roles") Set<String> roles
-//    );
+    @Query("""
+            SELECT p FROM Permission p
+            WHERE (:keyword IS NULL OR LOWER(p.name) LIKE LOWER(CONCAT('%', :keyword, '%'))
+                OR LOWER(p.path) LIKE LOWER(CONCAT('%', :keyword, '%')))
+            AND (:method IS NULL OR p.method = :method)
+            """)
+    Page<Permission> search(
+            @Param("keyword") String keyword,
+            @Param("method") HttpMethod method,
+            Pageable pageable
+    );
 }
 
