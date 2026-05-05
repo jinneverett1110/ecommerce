@@ -1,4 +1,4 @@
-package quant.ecommerce.dto.response;
+package quant.ecommerce.dto.response.auth;
 
 import lombok.Builder;
 import lombok.Getter;

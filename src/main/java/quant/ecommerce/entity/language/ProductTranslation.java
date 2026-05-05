@@ -1,4 +1,4 @@
-package quant.ecommerce.entity.product;
+package quant.ecommerce.entity.language;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -10,7 +10,7 @@ import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import quant.ecommerce.entity.common.BaseEntity;
-import quant.ecommerce.entity.common.Language;
+import quant.ecommerce.entity.product.Product;
 
 @Entity
 @Table(name = "product_translations", indexes = {

@@ -5,12 +5,12 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import quant.ecommerce.dto.request.LoginRequest;
-import quant.ecommerce.dto.request.RegisterRequest;
+import quant.ecommerce.dto.request.auth.LoginRequest;
+import quant.ecommerce.dto.request.auth.RegisterRequest;
 import quant.ecommerce.dto.response.ApiResponse;
-import quant.ecommerce.dto.response.AuthResponse;
-import quant.ecommerce.dto.request.OTPRequest;
-import quant.ecommerce.dto.response.TokenResponse;
+import quant.ecommerce.dto.response.auth.AuthResponse;
+import quant.ecommerce.dto.request.auth.OTPRequest;
+import quant.ecommerce.dto.response.auth.TokenResponse;
 import quant.ecommerce.service.auth.AuthService;
 
 @RestController

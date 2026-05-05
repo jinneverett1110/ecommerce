@@ -1,4 +1,4 @@
-package quant.ecommerce.entity.catalog;
+package quant.ecommerce.entity.language;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -9,29 +9,29 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import quant.ecommerce.entity.catalog.Brand;
 import quant.ecommerce.entity.common.BaseEntity;
-import quant.ecommerce.entity.common.Language;
 
 @Entity
-@Table(name = "category_translations", indexes = {
-        @Index(name = "idx_category_translation_cat_lang", columnList = "categoryId, languageId", unique = true)
+@Table(name = "brand_translations", indexes = {
+        @Index(name = "idx_brand_translation_brand_lang", columnList = "brandId, languageId", unique = true)
 })
-@SQLDelete(sql = "UPDATE category_translations SET deleted_at = NOW() WHERE id = ?")
+@SQLDelete(sql = "UPDATE brand_translations SET deleted_at = NOW() WHERE id = ?")
 @Where(clause = "deleted_at IS NULL")
 @Getter
 @Setter
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CategoryTranslation extends BaseEntity {
+public class BrandTranslation extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categoryId", nullable = false)
-    private Category category;
+    @JoinColumn(name = "brandId", nullable = false)
+    private Brand brand;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "languageId", nullable = false)

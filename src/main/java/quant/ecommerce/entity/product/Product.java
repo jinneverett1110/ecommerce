@@ -10,6 +10,7 @@ import org.hibernate.annotations.Where;
 import quant.ecommerce.entity.catalog.Brand;
 import quant.ecommerce.entity.catalog.Category;
 import quant.ecommerce.entity.common.BaseEntity;
+import quant.ecommerce.entity.language.ProductTranslation;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

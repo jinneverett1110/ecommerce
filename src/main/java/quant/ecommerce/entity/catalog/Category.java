@@ -6,6 +6,7 @@ import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import quant.ecommerce.entity.common.BaseEntity;
+import quant.ecommerce.entity.language.CategoryTranslation;
 
 import java.util.ArrayList;
 import java.util.List;

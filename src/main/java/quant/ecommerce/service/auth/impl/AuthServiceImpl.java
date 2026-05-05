@@ -8,11 +8,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import quant.ecommerce.dto.request.LoginRequest;
-import quant.ecommerce.dto.request.OTPRequest;
-import quant.ecommerce.dto.request.RegisterRequest;
-import quant.ecommerce.dto.response.AuthResponse;
-import quant.ecommerce.dto.response.TokenResponse;
+import quant.ecommerce.dto.request.auth.LoginRequest;
+import quant.ecommerce.dto.request.auth.OTPRequest;
+import quant.ecommerce.dto.request.auth.RegisterRequest;
+import quant.ecommerce.dto.response.auth.AuthResponse;
+import quant.ecommerce.dto.response.auth.TokenResponse;
 import quant.ecommerce.entity.auth.RefreshToken;
 import quant.ecommerce.entity.auth.Role;
 import quant.ecommerce.entity.auth.User;

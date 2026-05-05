@@ -1,11 +1,8 @@
-package quant.ecommerce.dto.response;
+package quant.ecommerce.dto.response.auth;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
-
-import java.time.Instant;
-import java.time.LocalDateTime;
 
 @Getter
 @Builder

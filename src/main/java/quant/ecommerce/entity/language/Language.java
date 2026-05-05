@@ -1,4 +1,4 @@
-package quant.ecommerce.entity.common;
+package quant.ecommerce.entity.language;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -9,9 +9,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-import quant.ecommerce.entity.catalog.BrandTranslation;
-import quant.ecommerce.entity.catalog.CategoryTranslation;
-import quant.ecommerce.entity.product.ProductTranslation;
+import quant.ecommerce.entity.common.BaseEntity;
 
 import java.util.List;
 

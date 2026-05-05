@@ -1,4 +1,4 @@
-package quant.ecommerce.entity.common;
+package quant.ecommerce.entity.language;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,6 +9,7 @@ import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import quant.ecommerce.entity.auth.User;
+import quant.ecommerce.entity.common.BaseEntity;
 
 @Entity
 @Table(name = "user_translations", indexes = {
@@ -21,7 +22,7 @@ import quant.ecommerce.entity.auth.User;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Usertranslation extends BaseEntity{
+public class Usertranslation extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
