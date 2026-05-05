@@ -11,7 +11,7 @@ import quant.ecommerce.enums.HttpMethod;
 import java.util.Set;
 
 public interface PermissionRepository extends JpaRepository<Permission, Integer> {
-    boolean exitsByPathAndMethod(String path, HttpMethod method);
+    boolean existsByPathAndMethod(String path, HttpMethod method);
     boolean existsByPathAndMethodAndIdNot(String path, HttpMethod method, Integer id);
 
     @Query("""

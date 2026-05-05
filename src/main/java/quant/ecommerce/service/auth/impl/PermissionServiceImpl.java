@@ -20,7 +20,7 @@ public class PermissionServiceImpl implements PermissionService {
 
     @Override
     public PermissionResponse create(PermissionRequest request) {
-        if(permissionRepository.exitsByPathAndMethod(request.getPath(), request.getMethod())){
+        if(permissionRepository.existsByPathAndMethod(request.getPath(), request.getMethod())){
             throw new RuntimeException("Permission already exists");
         }
 
