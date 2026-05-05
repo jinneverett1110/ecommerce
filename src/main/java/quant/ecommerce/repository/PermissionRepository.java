@@ -5,11 +5,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 import quant.ecommerce.entity.auth.Permission;
 import quant.ecommerce.enums.HttpMethod;
 
 import java.util.Set;
-
+@Repository
 public interface PermissionRepository extends JpaRepository<Permission, Integer> {
     boolean existsByPathAndMethod(String path, HttpMethod method);
     boolean existsByPathAndMethodAndIdNot(String path, HttpMethod method, Integer id);
